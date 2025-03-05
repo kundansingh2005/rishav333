@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color, #f4f4f4);
+    color: var(--text-color, black);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.5s, color 0.5s;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    background: var(--container-bg, white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--sidebar-bg, #222);
+    color: var(--sidebar-text, white);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.filters {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filters input, .filters select, .filters button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.glow-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 10px #007bff;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.history-table th, .history-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.history-table th {
+    background: #007bff;
+    color: white;
+}
+
+.dark-mode {
+    --bg-color: #222;
+    --text-color: white;
+    --container-bg: #333;
+    --sidebar-bg: #111;
+    --sidebar-text: lightgray;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-in-out;
+}

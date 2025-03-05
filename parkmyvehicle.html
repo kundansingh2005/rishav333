@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park My Vehicle</title>
+    <link rel="stylesheet" href="parkmyvehicle.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Parking Options</h2>
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </aside>
+        <main class="content">
+            <h1>Park My Vehicle</h1>
+            <p>Select a parking slot and confirm booking.</p>
+            <div id="parking-lot" class="parking-lot"></div>
+            <br>
+            <button id="confirmBooking">Confirm Booking</button>
+            <div id="qrCode"></div>
+            <p id="timer"></p>
+            <audio id="confirmSound" src="confirm.mp3"></audio>
+            <div id="map"></div>
+        </main>
+    </div>
+    <script src="parkmyvehicle.js"></script>
+</body>
+</html>

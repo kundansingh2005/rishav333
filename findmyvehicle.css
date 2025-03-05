@@ -1,0 +1,126 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color, #f4f4f4);
+    color: var(--text-color, black);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    background: var(--container-bg, white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: var(--sidebar-bg, #222);
+    color: var(--sidebar-text, white);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Input */
+input {
+    padding: 12px;
+    margin: 10px 0;
+    width: 80%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+input:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Button */
+.glow-button {
+    padding: 12px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/* Map */
+#map {
+    width: 350px;
+    height: 250px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --bg-color: #222;
+    --text-color: white;
+    --container-bg: #333;
+    --sidebar-bg: #111;
+    --sidebar-text: lightgray;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide-in {
+    animation: slideInLeft 1s ease-in-out;
+}

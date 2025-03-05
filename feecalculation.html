@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Calculator</title>
+    <link rel="stylesheet" href="feecalculation.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Fee Calculator</h2>
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </aside>
+        <main class="content">
+            <h1 class="fade-in">Calculate Parking Fee 💰</h1>
+            <div class="calculator slide-in">
+                <label for="vehicleType">Vehicle Type:</label>
+                <select id="vehicleType">
+                    <option value="car">Car</option>
+                    <option value="bike">Bike</option>
+                    <option value="truck">Truck</option>
+                </select>
+                
+                <h4 id="rateDisplay" class="fade-in">Charge: ₹0 per hour</h4>
+                <h4 id="dailyRateDisplay" class="fade-in">Charge: ₹0 per day</h4>
+                <h4 id="weeklyRateDisplay" class="fade-in">Charge: ₹0 per week</h4>
+                <h4 id="monthlyRateDisplay" class="fade-in">Charge: ₹0 per month</h4>
+                
+                <label for="duration">Parking Duration:</label>
+                <input type="number" id="duration" min="1" placeholder="Enter Duration">
+                <label for="timeUnit">Select Time Unit:</label>
+                <select id="timeUnit">
+                    <option value="hour">Hours</option>
+                    <option value="day">Days</option>
+                    <option value="week">Weeks</option>
+                    <option value="month">Months</option>
+                </select>
+                
+                <button id="calculateFee" class="glow-button">Calculate Fee</button>
+                
+                <h2 class="fade-in" id="totalCost">Total Cost: ₹0.00</h2>
+            </div>
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

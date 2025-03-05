@@ -1,0 +1,49 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const historyBody = document.getElementById("historyBody");
+    const filterDate = document.getElementById("filterDate");
+    const filterLocation = document.getElementById("filterLocation");
+    const filterStatus = document.getElementById("filterStatus");
+    const applyFilters = document.getElementById("applyFilters");
+    const darkModeToggle = document.getElementById("darkModeToggle");
+
+    let parkingHistory = [
+        { date: "2025-02-10", location: "Station A", slot: "12", status: "Paid" },
+        { date: "2025-02-12", location: "Station B", slot: "5", status: "Unpaid" },
+        { date: "2025-02-15", location: "Station C", slot: "8", status: "Paid" },
+        { date: "2025-02-18", location: "Station A", slot: "3", status: "Unpaid" },
+    ];
+
+    function renderTable(data) {
+        historyBody.innerHTML = "";
+        data.forEach(record => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${record.date}</td>
+                <td>${record.location}</td>
+                <td>${record.slot}</td>
+                <td class="${record.status === 'Paid' ? 'paid' : 'unpaid'}">${record.status}</td>
+            `;
+            historyBody.appendChild(row);
+        });
+    }
+
+    applyFilters.addEventListener("click", () => {
+        let filteredData = parkingHistory.filter(record => {
+            return (!filterDate.value || record.date === filterDate.value) &&
+                   (!filterLocation.value || record.location.toLowerCase().includes(filterLocation.value.toLowerCase())) &&
+                   (!filterStatus.value || record.status === filterStatus.value);
+        });
+        renderTable(filteredData);
+    });
+
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    });
+
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+    }
+
+    renderTable(parkingHistory);
+});

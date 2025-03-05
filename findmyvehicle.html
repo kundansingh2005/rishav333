@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My Vehicle</title>
+    <link rel="stylesheet" href="findmyvehicle.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Find My Vehicle</h2>
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </aside>
+        <main class="content">
+            <h1 class="fade-in">Locate Your Vehicle 🚗</h1>
+            <p class="fade-in">Enter your vehicle number to find its location.</p>
+            <input type="text" id="vehicleNumber" placeholder="Enter Vehicle Number" class="slide-in">
+            <button id="findVehicle" class="glow-button">Find Vehicle</button>
+            <div id="map"></div>
+            <p id="vehicleLocation" class="fade-in"></p>
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
